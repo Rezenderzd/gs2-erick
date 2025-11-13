@@ -58,7 +58,7 @@ def procurando_SoftSkills():
     return peso
 
 def procurando_EstiloTrabalho():
-    EstiloDeTrabalho_escolhido = input('Digite seu Estilo De Trabalho desjado: ').lower()
+    EstiloDeTrabalho_escolhido = input('Digite seu estilo de trabalho desjado(presencial/hibrido/remoto): ').lower()
     if EstiloDeTrabalho_escolhido in EstiloDeTrabalho:
         peso = EstiloDeTrabalho[EstiloDeTrabalho_escolhido]
     else:

@@ -18,7 +18,7 @@
     "notafinal": 7.0
   },
   {
-    "nome": "gigi",
+    "nome": "giovana",
     "cursos": 5,
     "linguas": 4,
     "linguagens": 8,
@@ -43,5 +43,23 @@
     "softskills": 8,
     "estilodetrabalho": 6,
     "notafinal": 7.0
+  },
+  {
+    "nome": "maria",
+    "cursos": 4,
+    "linguas": 7,
+    "linguagens": 0,
+    "softskills": 0,
+    "estilodetrabalho": 3,
+    "notafinal": 2.1
+  },
+  {
+    "nome": "erick",
+    "cursos": 0,
+    "linguas": 10,
+    "linguagens": 0,
+    "softskills": 10,
+    "estilodetrabalho": 3,
+    "notafinal": 4.6
   }
 ]
