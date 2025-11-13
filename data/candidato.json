@@ -1,4 +1,4 @@
-[ 
+[
   {
     "nome": "raphael ",
     "cursos": 10,
@@ -25,5 +25,14 @@
     "softskills": 7,
     "estilodetrabalho": 6,
     "notafinal": 6.4
+  },
+  {
+    "nome": "guilherme",
+    "cursos": 5,
+    "linguas": 10,
+    "linguagens": 8,
+    "softskills": 7,
+    "estilodetrabalho": 10,
+    "notafinal": 8.1
   }
 ]

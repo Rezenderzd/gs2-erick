@@ -5,7 +5,22 @@ from erick_repo import Repositorio
 repo = Repositorio()
 
 
-
+def menu():
+    condicao = True
+    while condicao:
+        print("1 Cadastrar o usuário")
+        print("2 Exibir ranking")
+        print("0 Sair do programa")
+        escolha = int(input("Escolha o que deseja: "))
+        if escolha==1:
+            main()
+        elif escolha == 2:
+            ver_ranking()
+        elif escolha == 0:
+            print("Fechando programa")
+            condicao = False
+        else:
+            print("Escolha uma opcao valida")
 def procurando_cursos():                    
     curso_escolhido = input('Digite seu curso: ').lower()           #USUARIO DIGITA O CURSO ATUAL 
     if curso_escolhido in Cursos:                                   #SE O CURSO ESTIVER NO PARAMETRO DESEJADO
@@ -51,8 +66,29 @@ def procurando_EstiloTrabalho():
 
     return peso
 
-def main():                                             
-    nome = input('seu nome: ')
+def ver_ranking():
+    lista_candidatos = repo.candidats_db()
+    if not lista_candidatos:
+        print("Nenhum candidato cadastrado")
+        return
+    lista_candidatos.sort(key=lambda c: c['notafinal'], reverse=True)
+
+    print(f"\n## | {'Nome':<20} | {'Nota':<5}")
+    print("-" * 35)
+    for i, usuario in enumerate(lista_candidatos):
+        print(f"{i+1:02d} | {usuario['nome']:<20} | {usuario['notafinal']:<5}")
+    print("-" * 35)
+
+def main():                                          
+    nome = input('Seu nome: ').strip().lower()
+    lista_usuarios = repo.candidats_db()
+
+    for u in lista_usuarios:
+        if u["nome"].strip().lower() == nome:
+            print('Este nome já está sendo utilizado em outro cadastro')
+            return menu()
+
+
     Cursos = procurando_cursos()
     peso_cursos = 3                                                                                 #PESO ESTIPULADO PELO GRUPO PARA O ARGUMENTO
     Linguas = procurando_Linguas()
@@ -69,6 +105,10 @@ def main():
     candidato = Candidato(nome, Cursos, Linguas, Linguagem, SoftSkills, EstiloDeTrabalho, nota)     #ADICIONA AS INFORMAÇÕES NA CLASSE
     convertendo_candidato = candidato.informacoes()
     repo.criandoCandidato(convertendo_candidato)                                                    #ADICIONA AS INFORMAÇÕES DO USUÁRIO NO BANCO DE DADOS
-    print('deu bom')
+    escolha = input('Usuário cadastrado. Ver ranking?(s/n)')
+    if escolha=='s':
+        ver_ranking()
+    else:
+        menu()
 
-main()
+menu()
