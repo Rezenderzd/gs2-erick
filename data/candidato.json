@@ -1,0 +1,29 @@
+[ 
+  {
+    "nome": "raphael ",
+    "cursos": 10,
+    "linguas": 10,
+    "linguagens": 10,
+    "softskills": 10,
+    "estilodetrabalho": 10,
+    "notafinal": 10.0
+  },
+  {
+    "nome": "pedro",
+    "cursos": 5,
+    "linguas": 4,
+    "linguagens": 10,
+    "softskills": 7,
+    "estilodetrabalho": 6,
+    "notafinal": 7.0
+  },
+  {
+    "nome": "gigi",
+    "cursos": 5,
+    "linguas": 4,
+    "linguagens": 8,
+    "softskills": 7,
+    "estilodetrabalho": 6,
+    "notafinal": 6.4
+  }
+]
